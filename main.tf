@@ -11,6 +11,6 @@ module "app_service" {
   app_service_name      = "example-appservice-mtm-terraform-multislot"
   repo_url              = "https://github.com/mariotristan/flappy_bird.git"
   branch                = "main"
-  slot_name_to_deploy  =      "staging" 
-  webappname =      "example-appservice-mtm-terraform-multislot"
+  slot_name_to_deploy   = "staging"
+  webappname            = "example-appservice-mtm-terraform-multislot"
 }

@@ -47,7 +47,7 @@ variable "default_slot" {
   description = "The default slot"
   type        = string
   default     = "testing"
-  
+
 }
 
 variable "webappname" {
