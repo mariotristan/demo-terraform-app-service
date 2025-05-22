@@ -1,0 +1,16 @@
+{
+  "terraform": {
+    "backend": {
+      "azurerm": {
+        "client_id": "<your-client-id>",
+        "client_secret": "<your-client-secret>",
+        "container_name": "<your-container-name>",
+        "key": "<your-key>",
+        "resource_group_name": "<your-resource-group>",
+        "storage_account_name": "<your-storage-account>",
+        "subscription_id": "<your-subscription-id>",
+        "tenant_id": "<your-tenant-id>"
+      }
+    }
+  }
+}
