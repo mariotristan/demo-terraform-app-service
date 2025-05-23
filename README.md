@@ -2,6 +2,16 @@
 
 This project demonstrates how to provision and deploy a production-ready Azure App Service, including deployment slots, using Infrastructure as Code (IaC) with Terraform. It is designed for teams and individuals who want to automate the creation, configuration, and management of Azure App Services in a repeatable and secure way.
 
+This project enables you to provision and manage Azure App Service deployment slots using Terraform. With deployment slots, you can:
+
+- Automatically create additional slots (such as staging or testing) alongside your production slot.
+- Deploy different versions of your app to each slot (e.g., production uses one Docker image, staging uses another).
+- Swap slots for zero-downtime deployments—test your app in staging, then swap it into production instantly.
+- Configure each slot independently (environment variables, settings, etc.).
+- Enable safe rollbacks by swapping back to a previous slot if needed.
+
+The project’s module lets you control slot creation (with the create_staging_slot variable), slot names, and the Docker images used for each slot, making blue-green or canary deployments easy and repeatable.
+
 Key features:
 
 - Modular design: Uses a reusable Terraform module for App Service and slot management.

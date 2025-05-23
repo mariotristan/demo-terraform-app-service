@@ -13,7 +13,7 @@ module "app_service" {
   webappname                   = "example-appservice-mtm-terraform-multislot"
   docker_registry_url          = "https://ghcr.io"
   docker_image_name_production = "ghcr.io/mariotristan/flappy_bird:main"
-  #Staging slot
+  #Staging slot (Optional)
   create_staging_slot       = true
   slot_name                 = "example-staging-slot"
   docker_image_name_staging = "ghcr.io/mariotristan/flappy_bird:release"
