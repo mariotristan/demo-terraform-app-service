@@ -28,32 +28,10 @@ variable "app_service_name" {
   type        = string
 }
 
-variable "repo_url" {
-  description = "The URL of the repository containing the application code"
-  type        = string
-}
 
-variable "prod_branch" {
-  description = "The branch of the repository to deploy"
-  type        = string
-}
 
-variable "testing_branch" {
-  description = "The branch of the repository to deploy to the testing slot"
-  type        = string
 
-}
-variable "slot_name_to_deploy" {
-  description = "The name of the slot to deploy the application to"
-  type        = string
-}
 
-variable "default_slot" {
-  description = "The default slot"
-  type        = string
-  default     = "testing"
-
-}
 
 variable "webappname" {
   description = "The name of the web app"
@@ -61,16 +39,54 @@ variable "webappname" {
   default     = "example-appservice-mtm-terraform-multislot"
 }
 
-variable "create_testing_slot" {
-  description = "Flag to create a testing slot"
-  type        = bool
-  default     = false
-
-}
 
 variable "create_staging_slot" {
   description = "Flag to create a staging slot"
   type        = bool
   default     = false
+
+}
+
+variable "docker_image_name_production" {
+  description = "The Docker image name"
+  type        = string
+  default     = "ghcr.io/mariotristan/flappy_bird:main"
+
+
+}
+
+
+variable "docker_image_name_staging" {
+  description = "The Docker image name for staging"
+  type        = string
+  default     = "ghcr.io/mariotristan/flappy_bird:release"
+
+}
+
+variable "docker_registry_url" {
+  description = "The Docker registry URL"
+  type        = string
+  default     = "https://ghcr.io"
+
+}
+
+variable "os_type" {
+  description = "The OS type for the App Service"
+  type        = string
+  default     = "Linux"
+
+}
+
+variable "sku_name" {
+  description = "The SKU name for the App Service plan"
+  type        = string
+  default     = "P1v2"
+
+}
+
+variable "slot_name" {
+  description = "The name of the slot"
+  type        = string
+  default     = "example-staging-slot"
 
 }

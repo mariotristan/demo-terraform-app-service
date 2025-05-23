@@ -1,6 +1,15 @@
 # Demo Terraform Azure App Service
 
-This project demonstrates how to provision and deploy an Azure App Service (with deployment slots) using Terraform, following Azure and Terraform best practices.
+This project demonstrates how to provision and deploy a production-ready Azure App Service, including deployment slots, using Infrastructure as Code (IaC) with Terraform. It is designed for teams and individuals who want to automate the creation, configuration, and management of Azure App Services in a repeatable and secure way.
+
+Key features:
+
+- Modular design: Uses a reusable Terraform module for App Service and slot management.
+- Supports multiple deployment slots (e.g., staging, production) for zero-downtime deployments.
+- Integrates with Docker images and GitHub Container Registry for flexible app deployment.
+- Follows Azure and Terraform best practices for security, maintainability, and scalability.
+- Example backend configuration provided for safe sharing and onboarding.
+- Includes clear instructions for setup, deployment, and teardown.
 
 ## Project Structure
 
@@ -79,14 +88,19 @@ The module supports the following variables (see `app_service_module/variables.t
 - `resource_group_name`: Name of the resource group
 - `location`: Azure region
 - `app_service_plan_name`: Name of the App Service plan
-- `app_service_plan_tier`: Tier (e.g., Standard)
-- `app_service_plan_size`: Size (e.g., S1)
+- `app_service_plan_tier`: Tier of the App Service plan
+- `app_service_plan_size`: Size of the App Service plan
 - `app_service_name`: Name of the App Service
-- `repo_url`: Git repository URL for deployment
-- `branch`: Branch to deploy
-- `slot_name_to_deploy`: Slot name (e.g., staging)
-- `webappname`: Name of the web app
-- ...and more (see module for details)
+- `webappname`: Name of the web app (default: example-appservice-mtm-terraform-multislot)
+- `create_staging_slot`: Flag to create a staging slot (bool, default: false)
+- `docker_image_name_production`: Docker image name for production (default: ghcr.io/mariotristan/flappy_bird:main)
+- `docker_image_name_staging`: Docker image name for staging (default: ghcr.io/mariotristan/flappy_bird:release)
+- `docker_registry_url`: Docker registry URL (default: `https://ghcr.io`)
+- `os_type`: OS type for the App Service (default: Linux)
+- `sku_name`: SKU name for the App Service plan (default: P1v2)
+- `slot_name`: Name of the slot (default: example-staging-slot)
+
+See the module for additional variables and details.
 
 ## Security & Best Practices
 
@@ -104,4 +118,4 @@ The module supports the following variables (see `app_service_module/variables.t
 
 ---
 
-*Generated on May 22, 2025. For questions, contact the project maintainer.*
+*Generated on May 23, 2025. For questions, contact the project maintainer.*
