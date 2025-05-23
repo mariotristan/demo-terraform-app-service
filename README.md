@@ -27,7 +27,6 @@ This project demonstrates how to provision and deploy an Azure App Service (with
    ```
 
 2. **Configure backend**
-   
    Copy `backend.tf.json.example` to `backend.tf.json` and fill in your Azure Storage Account, Resource Group, and credentials. **Do not commit secrets to version control!**
 
    ```zsh

@@ -33,11 +33,16 @@ variable "repo_url" {
   type        = string
 }
 
-variable "branch" {
+variable "prod_branch" {
   description = "The branch of the repository to deploy"
   type        = string
 }
 
+variable "testing_branch" {
+  description = "The branch of the repository to deploy to the testing slot"
+  type        = string
+
+}
 variable "slot_name_to_deploy" {
   description = "The name of the slot to deploy the application to"
   type        = string
@@ -54,4 +59,18 @@ variable "webappname" {
   description = "The name of the web app"
   type        = string
   default     = "example-appservice-mtm-terraform-multislot"
+}
+
+variable "create_testing_slot" {
+  description = "Flag to create a testing slot"
+  type        = bool
+  default     = false
+
+}
+
+variable "create_staging_slot" {
+  description = "Flag to create a staging slot"
+  type        = bool
+  default     = false
+
 }
