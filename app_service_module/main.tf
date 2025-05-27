@@ -16,7 +16,7 @@ resource "azurerm_service_plan" "example" {
   sku_name            = var.sku_name
 }
 
-
+#TODO: add support for windows web apps
 resource "azurerm_linux_web_app" "example" {
   name                = var.webappname
   resource_group_name = azurerm_resource_group.example.name
@@ -33,6 +33,8 @@ resource "azurerm_linux_web_app" "example" {
   }
 }
 
+
+#TODO: make this more dynamic, I want to be able to create many slots based on a variable of type list(string)
 resource "azurerm_linux_web_app_slot" "staging" {
   count          = var.create_staging_slot ? 1 : 0
   name           = var.slot_name
